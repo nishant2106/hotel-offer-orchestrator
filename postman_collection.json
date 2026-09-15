@@ -1,0 +1,56 @@
+{
+  "info": {
+    "name": "Hotel Offer Orchestrator",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000"
+    }
+  ],
+  "item": [
+    {
+      "name": "Valid city with overlaps",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/hotels?city=delhi"
+      }
+    },
+    {
+      "name": "Valid city with price filter",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/hotels?city=delhi&minPrice=5000&maxPrice=6500"
+      }
+    },
+    {
+      "name": "City with no results",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/hotels?city=jaipur"
+      }
+    },
+    {
+      "name": "Supplier A mock",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/supplierA/hotels?city=delhi"
+      }
+    },
+    {
+      "name": "Supplier B mock",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/supplierB/hotels?city=delhi"
+      }
+    },
+    {
+      "name": "Health check",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/health"
+      }
+    }
+  ]
+}
